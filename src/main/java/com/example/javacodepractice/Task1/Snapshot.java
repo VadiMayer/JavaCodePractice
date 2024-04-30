@@ -1,4 +1,4 @@
-package com.example.javacodepractice.model;
+package com.example.javacodepractice.Task1;
 
 public class Snapshot {
     private final byte[] value;

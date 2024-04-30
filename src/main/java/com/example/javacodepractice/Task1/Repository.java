@@ -1,7 +1,8 @@
-package com.example.javacodepractice.model;
+package com.example.javacodepractice.Task1;
 
 public class Repository {
     Snapshot snapshot;
+
     public Snapshot getSnapshot() {
         return snapshot;
     }

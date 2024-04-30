@@ -1,4 +1,4 @@
-package com.example.javacodepractice.model;
+package com.example.javacodepractice.Task1;
 
 public class MyStringBuilder {
 
@@ -18,12 +18,23 @@ public class MyStringBuilder {
         if (str == null) {
             System.out.println("Дай не null значение");
         }
+        int countChar = 0;
         for (int i = count; i <= count; i++) {
             byte[] temp = str.getBytes();
-            if ((float) value.length * DEFAULT_LOAD_FACTOR == count) {
+            countChar = temp.length;
+            if ((float) value.length * DEFAULT_LOAD_FACTOR == count || value.length * DEFAULT_LOAD_FACTOR > count) {
                 increasingSize();
             }
-            System.arraycopy(temp, 0, value, count, temp.length);
+            try {
+                System.arraycopy(temp, 0, value, count, temp.length);
+            } catch (Exception e) {
+                increasingSizeIfLongString(countChar);
+                System.arraycopy(temp, 0, value, count, temp.length);
+            }
+        }
+        if (countChar > 1) {
+            count = count + countChar;
+            return;
         }
         count++;
     }
@@ -31,6 +42,12 @@ public class MyStringBuilder {
     private void increasingSize() {
         byte[] stringsNewArray = new byte[value.length + count];
         System.arraycopy(value, 0, stringsNewArray, 0, count);
+        value = stringsNewArray;
+    }
+
+    private void increasingSizeIfLongString(int numberOfCharacters) {
+        byte[] stringsNewArray = new byte[value.length + numberOfCharacters];
+        System.arraycopy(value, 0, stringsNewArray, 0, count + numberOfCharacters);
         value = stringsNewArray;
     }
 

@@ -1,7 +1,7 @@
 package com.example.javacodepractice;
 
-import com.example.javacodepractice.model.MyStringBuilder;
-import com.example.javacodepractice.model.Repository;
+import com.example.javacodepractice.Task1.MyStringBuilder;
+import com.example.javacodepractice.Task1.Repository;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
@@ -9,6 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavaCodePracticeApplication {
 
 	public static void main(String[] args) {
+
+		StringBuilder stringBuilder = new StringBuilder();
+
+		stringBuilder.append(11);
+		stringBuilder.append(22);
 
 		MyStringBuilder myStringBuilder = new MyStringBuilder();
 
