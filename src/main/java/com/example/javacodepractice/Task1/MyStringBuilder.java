@@ -27,7 +27,7 @@ public class MyStringBuilder {
             }
             try {
                 System.arraycopy(temp, 0, value, count, temp.length);
-            } catch (Exception e) {
+            } catch (ArrayIndexOutOfBoundsException e) {
                 increasingSizeIfLongString(countChar);
                 System.arraycopy(temp, 0, value, count, temp.length);
             }
@@ -47,7 +47,7 @@ public class MyStringBuilder {
 
     private void increasingSizeIfLongString(int numberOfCharacters) {
         byte[] stringsNewArray = new byte[value.length + numberOfCharacters];
-        System.arraycopy(value, 0, stringsNewArray, 0, count + numberOfCharacters);
+        System.arraycopy(value, 0, stringsNewArray, 0, value.length);
         value = stringsNewArray;
     }
 
