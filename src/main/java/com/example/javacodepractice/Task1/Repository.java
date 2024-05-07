@@ -1,5 +1,8 @@
 package com.example.javacodepractice.Task1;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Repository {
     Snapshot snapshot;
 

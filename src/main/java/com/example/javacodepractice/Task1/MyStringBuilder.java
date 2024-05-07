@@ -1,6 +1,11 @@
 package com.example.javacodepractice.Task1;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyStringBuilder {
+    Repository repository;
 
     private byte[] value;
 
@@ -12,6 +17,11 @@ public class MyStringBuilder {
 
     {
         value = new byte[DEFAULT_INITIAL_CAPACITY];
+    }
+
+    @Autowired
+    public MyStringBuilder(Repository repository) {
+        this.repository = repository;
     }
 
     public void append(String str) {
@@ -51,15 +61,15 @@ public class MyStringBuilder {
         value = stringsNewArray;
     }
 
-    public Snapshot createSnapshot() {
+    public void createSnapshot() {
         byte[] bytes = new byte[value.length];
         System.arraycopy(value, 0, bytes, 0, count);
-        return new Snapshot(bytes, count);
+        repository.setSnapshot(new Snapshot(bytes, count));
     }
 
-    public void undo(Snapshot snapshot) {
-        this.value = snapshot.getValue();
-        this.count = snapshot.getCount();
+    public void undo() {
+        this.value = repository.getSnapshot().getValue();
+        this.count = repository.getSnapshot().getCount();
     }
 
     @Override
