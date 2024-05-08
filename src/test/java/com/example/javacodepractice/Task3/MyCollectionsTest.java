@@ -27,7 +27,7 @@ class MyCollectionsTest {
     void filter() {
         MyCollections myCollections = new MyCollections();
         FilterOnlyPositiveNumbers filterOnlyPositiveNumbers = new FilterOnlyPositiveNumbers();
-        Integer[] array = (Integer[]) myCollections.filter(numbers, filterOnlyPositiveNumbers);
+        Integer[] array = myCollections.filter(numbers, filterOnlyPositiveNumbers);
         System.out.println(Arrays.toString(array));
     }
 }
