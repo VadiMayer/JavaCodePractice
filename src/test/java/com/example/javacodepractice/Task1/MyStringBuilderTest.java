@@ -10,7 +10,7 @@ class MyStringBuilderTest {
 
     @BeforeEach
     void createStringBuilder() {
-        myStringBuilder = new MyStringBuilder(new Repository());
+        myStringBuilder = new MyStringBuilder();
     }
 
     @Test

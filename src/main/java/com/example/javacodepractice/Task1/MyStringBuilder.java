@@ -1,9 +1,5 @@
 package com.example.javacodepractice.Task1;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class MyStringBuilder {
     Repository repository;
 
@@ -17,11 +13,7 @@ public class MyStringBuilder {
 
     {
         value = new byte[DEFAULT_INITIAL_CAPACITY];
-    }
-
-    @Autowired
-    public MyStringBuilder(Repository repository) {
-        this.repository = repository;
+        repository = new Repository();
     }
 
     public void append(String str) {

@@ -6,8 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class MyCollectionsTest {
     Integer[] numbers;

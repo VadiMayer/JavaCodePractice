@@ -2,7 +2,6 @@ package com.example.javacodepractice.Task1;
 
 public class Snapshot {
     private final byte[] value;
-
     private final int count;
 
     public Snapshot(byte[] value, int count) {
