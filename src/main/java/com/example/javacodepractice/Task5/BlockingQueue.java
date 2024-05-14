@@ -16,6 +16,7 @@ public class BlockingQueue<E> {
 
     public BlockingQueue(int size) {
         this.size = size;
+        currentSize = new AtomicInteger(0);
         storage = new LinkedList<>();
         lock = new Object();
     }
@@ -44,6 +45,7 @@ public class BlockingQueue<E> {
                 return null;
             } else {
                 E firstElement = storage.remove();
+                currentSize.decrementAndGet();
                 lock.notify();
                 return firstElement;
             }
