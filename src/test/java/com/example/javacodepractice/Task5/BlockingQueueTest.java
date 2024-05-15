@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class BlockingQueueTest {
 
     @Test
-    void enqueue() throws InterruptedException {
+    void enqueueAndDequeue() throws InterruptedException {
         BlockingQueue<Integer> queue = new BlockingQueue<>(5);
 
         // Создаем поток для добавления элементов в очередь
         Thread producerThread = new Thread(() -> {
             try {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 1000000; i++) {
                     queue.enqueue(i);
                     System.out.println("Enqueued: " + i);
                 }
@@ -25,7 +25,7 @@ class BlockingQueueTest {
         // Создаем поток для извлечения элементов из очереди
         Thread consumerThread = new Thread(() -> {
             try {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 1000000; i++) {
                     Integer value = queue.dequeue();
                     System.out.println("Dequeued: " + value);
                     if (value == null) {
@@ -39,11 +39,9 @@ class BlockingQueueTest {
 
         producerThread.start();
         consumerThread.start();
-
         // Ждем, пока оба потока завершатся
         producerThread.join();
         consumerThread.join();
-
         // Проверяем, что очередь пуста после завершения теста
         assertEquals(0, queue.size());
     }

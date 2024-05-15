@@ -1,12 +1,12 @@
 package com.example.javacodepractice.Task5;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BlockingQueue<E> {
 
-    private Queue<E> storage;
+    private E[] storage;
+    private int head;
+    private int tail;
 
     private final int size;
 
@@ -17,8 +17,10 @@ public class BlockingQueue<E> {
     public BlockingQueue(int size) {
         this.size = size;
         currentSize = new AtomicInteger(0);
-        storage = new LinkedList<>();
+        storage = (E[]) new Object[size];
         lock = new Object();
+        head = 0;
+        tail = 0;
     }
 
     //enqueue() для добавления элемента в очередь
@@ -27,7 +29,8 @@ public class BlockingQueue<E> {
             while (currentSize.get() == size) {
                 lock.wait();
             }
-            storage.add(e);
+            storage[tail] = e;
+            tail = (tail + 1) % size;
             currentSize.incrementAndGet();
             lock.notify();
         }
@@ -40,18 +43,15 @@ public class BlockingQueue<E> {
             while (currentSize.get() == 0) {
                 lock.wait();
             }
-            E firstElement = storage.remove();
+            E element = storage[head];
+            head = (head + 1) % size;
             currentSize.decrementAndGet();
             lock.notify();
-            return firstElement;
+            return element;
         }
     }
 
     public int size() {
         return currentSize.get();
-    }
-
-    public void getElements() {
-        System.out.println(storage);
     }
 }
