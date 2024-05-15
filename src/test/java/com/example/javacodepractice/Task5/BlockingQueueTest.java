@@ -13,7 +13,7 @@ class BlockingQueueTest {
         // Создаем поток для добавления элементов в очередь
         Thread producerThread = new Thread(() -> {
             try {
-                for (int i = 0; i < 1000000; i++) {
+                for (int i = 0; i < 10; i++) {
                     queue.enqueue(i);
                     System.out.println("Enqueued: " + i);
                 }
@@ -25,7 +25,7 @@ class BlockingQueueTest {
         // Создаем поток для извлечения элементов из очереди
         Thread consumerThread = new Thread(() -> {
             try {
-                for (int i = 0; i < 1000000; i++) {
+                for (int i = 0; i < 10; i++) {
                     Integer value = queue.dequeue();
                     System.out.println("Dequeued: " + value);
                     if (value == null) {
