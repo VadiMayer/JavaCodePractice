@@ -28,6 +28,9 @@ class BlockingQueueTest {
                 for (int i = 0; i < 10; i++) {
                     Integer value = queue.dequeue();
                     System.out.println("Dequeued: " + value);
+                    if (value == null) {
+                        i--;
+                    }
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

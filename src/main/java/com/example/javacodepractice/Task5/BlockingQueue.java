@@ -22,17 +22,14 @@ public class BlockingQueue<E> {
     }
 
     //enqueue() для добавления элемента в очередь
-    public boolean enqueue(E e) throws InterruptedException {
+    public void enqueue(E e) throws InterruptedException {
         synchronized (lock) {
-            if (currentSize.get() == size) {
+            while (currentSize.get() == size) {
                 lock.wait();
-                return false;
-            } else {
-                storage.add(e);
-                currentSize.incrementAndGet();
-                lock.notify();
-                return true;
             }
+            storage.add(e);
+            currentSize.incrementAndGet();
+            lock.notify();
         }
     }
 
@@ -40,15 +37,13 @@ public class BlockingQueue<E> {
     // Если очередь пуста, dequeue() должен блокировать вызывающий поток до появления нового элемента.
     public E dequeue() throws InterruptedException {
         synchronized (lock) {
-            if (currentSize.get() == 0) {
+            while (currentSize.get() == 0) {
                 lock.wait();
-                return null;
-            } else {
-                E firstElement = storage.remove();
-                currentSize.decrementAndGet();
-                lock.notify();
-                return firstElement;
             }
+            E firstElement = storage.remove();
+            currentSize.decrementAndGet();
+            lock.notify();
+            return firstElement;
         }
     }
 
