@@ -29,7 +29,7 @@ public class BlockingQueue<E> {
             }
             storage.add(e);
             currentSize.incrementAndGet();
-            lock.notify();
+            lock.notifyAll();
         }
     }
 
@@ -40,7 +40,7 @@ public class BlockingQueue<E> {
             }
             E firstElement = storage.remove();
             currentSize.decrementAndGet();
-            lock.notify();
+            lock.notifyAll();
             return firstElement;
         }
     }
