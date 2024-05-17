@@ -6,7 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentBank {
     private static Long ID = 1L;
-    private Map<Long, BankAccount> bankAccounts = new ConcurrentHashMap<>();
+    private final Map<Long, BankAccount> bankAccounts = new ConcurrentHashMap<>();
+
+    private final Object lock = new Object();
 
     public BankAccount createAccount(BigDecimal invoiceAmount) {
         BankAccount newBankAccount = new BankAccount(invoiceAmount);
@@ -16,14 +18,16 @@ public class ConcurrentBank {
     }
 
     public boolean transfer(BankAccount accountSource, BankAccount accountRecipient, BigDecimal amountTransfer) {
-        BankAccount accountSourceFromBankAccounts = bankAccounts.get(accountSource.getId());
-        BankAccount accountRecipientFromBankAccounts = bankAccounts.get(accountRecipient.getId());
-        if (accountSourceFromBankAccounts.getBalance().intValue() < amountTransfer.intValue()) {
-            return false;
-        } else {
-            accountSourceFromBankAccounts.withdraw(amountTransfer);
-            accountRecipientFromBankAccounts.deposit(amountTransfer);
-            return true;
+        synchronized (lock) {
+            BankAccount accountSourceFromBankAccounts = bankAccounts.get(accountSource.getId());
+            BankAccount accountRecipientFromBankAccounts = bankAccounts.get(accountRecipient.getId());
+            if (accountSourceFromBankAccounts.getBalance().intValue() < amountTransfer.intValue()) {
+                return false;
+            } else {
+                accountSourceFromBankAccounts.withdraw(amountTransfer);
+                accountRecipientFromBankAccounts.deposit(amountTransfer);
+                return true;
+            }
         }
     }
 
