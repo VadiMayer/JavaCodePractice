@@ -2,7 +2,7 @@ package com.example.javacodepractice.Task6;
 
 import java.math.BigDecimal;
 
-public class BankAccount extends ConcurrentBank {
+public class BankAccount {
 
     private Long id;
 
@@ -13,13 +13,11 @@ public class BankAccount extends ConcurrentBank {
     }
 
     public BigDecimal deposit(BigDecimal moneyClient) {
-        getBankAccounts().get(id).balance = balance.add(moneyClient);
         return balance = balance.add(moneyClient);
     }
 
     public BigDecimal withdraw(BigDecimal moneyClient) {
-        getBankAccounts().get(id).balance = balance.subtract(moneyClient);
-        return balance = moneyClient.subtract(moneyClient);
+        return balance = balance.subtract(moneyClient);
     }
 
     public BigDecimal getBalance() {

@@ -31,5 +31,6 @@ class BankAccountTest {
 
     @Test
     void getBalance() {
+        Assertions.assertEquals(1000000, bankAccount.getBalance().intValue());
     }
 }
