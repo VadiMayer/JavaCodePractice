@@ -5,6 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,51 +46,31 @@ class ConcurrentBankTest {
 
     @Test
     void transferInConcurrent() throws InterruptedException {
-        Thread threadForDepositForFirstStream = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                concurrentBank.getBankAccounts().get(1L).deposit(BigDecimal.valueOf(1));
+
+        ExecutorService executorService = Executors.newFixedThreadPool(15);
+        List<Callable<Void>> tasks = new ArrayList<>();
+
+        for (int i = 0; i < 15; i++) {
+            tasks.add(() -> {
+                for (int j = 0; j < 100000; j++) {
+                    concurrentBank.transfer(concurrentBank.getBankAccounts().get(16L), concurrentBank.getBankAccounts().get(2L), BigDecimal.valueOf(1));
+                }
+                return null;
+            });
+        }
+
+        List<Future<Void>> futures = executorService.invokeAll(tasks);
+
+        for (Future<Void> future : futures) {
+            try {
+                future.get();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        });
+        }
 
-        Thread threadForWithdrawForFirstStream = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                concurrentBank.getBankAccounts().get(1L).withdraw(BigDecimal.valueOf(1));
-            }
-        });
-
-        Thread threadForDepositForSecondStream = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                concurrentBank.getBankAccounts().get(2L).deposit(BigDecimal.valueOf(1));
-            }
-        });
-
-        Thread threadForWithdrawForSecondStream = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                concurrentBank.getBankAccounts().get(2L).withdraw(BigDecimal.valueOf(1));
-            }
-        });
-
-        Thread threadForTransfer = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
-                concurrentBank.transfer(concurrentBank.getBankAccounts().get(1L), concurrentBank.getBankAccounts().get(2L), BigDecimal.valueOf(1));
-            }
-        });
-
-        threadForDepositForFirstStream.start();
-        threadForWithdrawForFirstStream.start();
-        threadForDepositForSecondStream.start();
-        threadForWithdrawForSecondStream.start();
-        threadForTransfer.start();
-
-        threadForDepositForFirstStream.join();
-        threadForWithdrawForFirstStream.join();
-        threadForDepositForSecondStream.join();
-        threadForWithdrawForSecondStream.join();
-        threadForTransfer.join();
-
-
-        Assertions.assertEquals(0, concurrentBank.getBankAccounts().get(1L).getBalance().intValue());
-        Assertions.assertEquals(3000, concurrentBank.getBankAccounts().get(2L).getBalance().intValue());
+        Assertions.assertEquals(0, concurrentBank.getBankAccounts().get(16L).getBalance().intValue());
+        Assertions.assertEquals(18000, concurrentBank.getBankAccounts().get(2L).getBalance().intValue());
 
     }
 }

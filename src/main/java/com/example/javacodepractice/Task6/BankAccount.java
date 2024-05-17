@@ -19,13 +19,15 @@ public class BankAccount {
 
     public BigDecimal deposit(BigDecimal moneyClient) {
         synchronized (lock1) {
-            return this.balance.getAndUpdate(bigDecimal -> bigDecimal.add(moneyClient));
+            this.balance.getAndUpdate(bigDecimal -> bigDecimal.add(moneyClient));
+            return balance.get();
         }
     }
 
     public BigDecimal withdraw(BigDecimal moneyClient) {
         synchronized (lock2) {
-            return this.balance.getAndUpdate(bigDecimal -> bigDecimal.subtract(moneyClient));
+            this.balance.getAndUpdate(bigDecimal -> bigDecimal.subtract(moneyClient));
+            return balance.get();
         }
     }
 

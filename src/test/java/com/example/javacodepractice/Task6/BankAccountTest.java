@@ -39,14 +39,26 @@ class BankAccountTest {
 
     @Test
     void depositInConcurrent() throws InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(15);
+        List<Callable<Void>> tasks = new ArrayList<>();
+
         for (int i = 0; i < 15; i++) {
-            Thread thread = new Thread(() -> {
+            tasks.add(() -> {
                 for (int j = 0; j < 100000; j++) {
                     bankAccount.deposit(BigDecimal.valueOf(1));
                 }
+                return null;
             });
-            thread.start();
-            thread.join();
+        }
+
+        List<Future<Void>> futures = executorService.invokeAll(tasks);
+
+        for (Future<Void> future : futures) {
+            try {
+                future.get();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         Assertions.assertEquals(2500000, bankAccount.getBalance().intValue());
@@ -68,14 +80,13 @@ class BankAccountTest {
 
         List<Future<Void>> futures = executorService.invokeAll(tasks);
 
-        for (Future<Void> future: futures) {
+        for (Future<Void> future : futures) {
             try {
                 future.get();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
 
 
         Assertions.assertEquals(-500000, bankAccount.getBalance().intValue());
