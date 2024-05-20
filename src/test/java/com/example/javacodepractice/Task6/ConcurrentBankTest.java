@@ -37,11 +37,13 @@ class ConcurrentBankTest {
         concurrentBank.transfer(concurrentBank.getBankAccounts().get(1L), concurrentBank.getBankAccounts().get(2L), BigDecimal.valueOf(100));
         Assertions.assertEquals(2100, concurrentBank.getBankAccounts().get(2L).getBalance().intValue());
         Assertions.assertEquals(900, concurrentBank.getBankAccounts().get(1L).getBalance().intValue());
+        ConcurrentBank.setID(1L);
     }
 
     @Test
     void getTotalBalance() {
         Assertions.assertEquals(5050000, concurrentBank.getTotalBalance().intValue());
+        ConcurrentBank.setID(1L);
     }
 
     @Test
@@ -71,6 +73,6 @@ class ConcurrentBankTest {
 
         Assertions.assertEquals(0, concurrentBank.getBankAccounts().get(16L).getBalance().intValue());
         Assertions.assertEquals(18000, concurrentBank.getBankAccounts().get(2L).getBalance().intValue());
-
+        ConcurrentBank.setID(1L);
     }
 }
