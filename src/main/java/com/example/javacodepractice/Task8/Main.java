@@ -1,6 +1,5 @@
 package com.example.javacodepractice.Task8;
 
-import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 
 public class Main {

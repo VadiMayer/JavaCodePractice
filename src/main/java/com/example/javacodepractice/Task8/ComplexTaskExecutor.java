@@ -5,20 +5,19 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class ComplexTaskExecutor {
-    private ExecutorService[] executorService;
+    private final ExecutorService[] executorService;
     private final List<ComplexTask> storage;
     private final int numberOfTasks;
 
     public ComplexTaskExecutor(int numberOfTasks) {
-        for (int i = 0; i < numberOfTasks; i++) {
-            executorService = new ExecutorService[numberOfTasks];
-        }
+        this.executorService = new ExecutorService[numberOfTasks];
         this.numberOfTasks = numberOfTasks;
         storage = new ArrayList<>();
         for (int i = 0; i < numberOfTasks; i++) {
-            storage.add(new ComplexTask(List.of(1,1,1,1,1)));
+            storage.add(new ComplexTask(List.of(1, 1, 1, 1, 1)));
         }
     }
+
     public void executeTasks(int runSeveralTimes) throws BrokenBarrierException, InterruptedException {
 
         List<Callable<ComplexTask>> tasks = new ArrayList<>();
@@ -30,6 +29,7 @@ public class ComplexTaskExecutor {
                 int forLambda = j;
                 tasks.add(() -> storage.get(forLambda));
             }
+            executorService[i] = Executors.newFixedThreadPool(runSeveralTimes);
             List<Future<ComplexTask>> listFuture = executorService[i].invokeAll(tasks);
             for (Future<ComplexTask> future : listFuture) {
                 try {
