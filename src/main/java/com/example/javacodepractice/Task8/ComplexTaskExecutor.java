@@ -5,47 +5,41 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class ComplexTaskExecutor {
-    private final ExecutorService executorService;
-    private CyclicBarrier cyclicBarrier;
+    private ExecutorService[] executorService;
     private final List<ComplexTask> storage;
     private final int numberOfTasks;
 
     public ComplexTaskExecutor(int numberOfTasks) {
-        executorService = Executors.newFixedThreadPool(numberOfTasks);
+        for (int i = 0; i < numberOfTasks; i++) {
+            executorService = new ExecutorService[numberOfTasks];
+        }
         this.numberOfTasks = numberOfTasks;
         storage = new ArrayList<>();
+        for (int i = 0; i < numberOfTasks; i++) {
+            storage.add(new ComplexTask(List.of(1,1,1,1,1)));
+        }
     }
+    public void executeTasks(int runSeveralTimes) throws BrokenBarrierException, InterruptedException {
 
-    public boolean add(ComplexTask complexTask) {
-        return storage.add(complexTask);
-    }
-
-    public void executeTasks() throws BrokenBarrierException, InterruptedException {
         List<Callable<ComplexTask>> tasks = new ArrayList<>();
 
-        cyclicBarrier = new CyclicBarrier(numberOfTasks, );
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(numberOfTasks);
 
         for (int i = 0; i < numberOfTasks; i++) {
-            final int f = i;
-            tasks.add(() -> storage.get(f));
-        }
-
-        List<Future<ComplexTask>> listFuture = executorService.invokeAll(tasks);
-
-        for (Future<ComplexTask> future : listFuture) {
-            try {
-                future.get().execute();
-                cyclicBarrier.await();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+            for (int j = 0; j < runSeveralTimes; j++) {
+                int forLambda = j;
+                tasks.add(() -> storage.get(forLambda));
             }
-        }
-    }
-
-    public void sum() {
-        int result = 0;
-        for (int i = 0; i < storage.size(); i++) {
-            result = result + resultTask;
+            List<Future<ComplexTask>> listFuture = executorService[i].invokeAll(tasks);
+            for (Future<ComplexTask> future : listFuture) {
+                try {
+                    future.get().execute();
+                    cyclicBarrier.await();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            tasks.clear();
         }
     }
 }

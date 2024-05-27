@@ -5,18 +5,14 @@ import java.util.concurrent.BrokenBarrierException;
 
 public class Main {
     public static void main(String[] args) {
-        ComplexTaskExecutor complexTaskExecutor = new ComplexTaskExecutor(3);
-
-        complexTaskExecutor.add(new ComplexTask(List.of(1,1,1,1,3)));
-        complexTaskExecutor.add(new ComplexTask(List.of(1,1,1,1,4)));
-        complexTaskExecutor.add(new ComplexTask(List.of(1,1,1,1,5)));
+        ComplexTaskExecutor complexTaskExecutor = new ComplexTaskExecutor(5);
 
         Runnable testRunnable = () -> {
             System.out.println(Thread.currentThread().getName() + " started the test.");
 
             // Выполнение задач
             try {
-                complexTaskExecutor.executeTasks();
+                complexTaskExecutor.executeTasks(5);
             } catch (BrokenBarrierException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
