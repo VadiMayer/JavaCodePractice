@@ -8,13 +8,15 @@ public class ComplexTaskExecutor {
     private final ExecutorService[] executorService;
     private final List<ComplexTask> storage;
     private final int numberOfTasks;
+    private final CyclicBarrier cyclicBarrier;
 
     public ComplexTaskExecutor(int numberOfTasks) {
         this.executorService = new ExecutorService[numberOfTasks];
         this.numberOfTasks = numberOfTasks;
+        this.cyclicBarrier = new CyclicBarrier(numberOfTasks);
         storage = new ArrayList<>();
         for (int i = 0; i < numberOfTasks; i++) {
-            storage.add(new ComplexTask(List.of(1, 1, 1, 1, 1)));
+            storage.add(new ComplexTask(List.of(1, 1, 1, 1, 1), cyclicBarrier));
         }
     }
 
@@ -22,23 +24,26 @@ public class ComplexTaskExecutor {
 
         List<Callable<ComplexTask>> tasks = new ArrayList<>();
 
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(numberOfTasks);
-
         for (int i = 0; i < numberOfTasks; i++) {
+            //размножаем задачу на runSeveralTimes записываем в tasks
             for (int j = 0; j < runSeveralTimes; j++) {
-                int forLambda = j;
+                int forLambda = i;
                 tasks.add(() -> storage.get(forLambda));
             }
+            //создаем для каждого комплекта задач executorService
             executorService[i] = Executors.newFixedThreadPool(runSeveralTimes);
             List<Future<ComplexTask>> listFuture = executorService[i].invokeAll(tasks);
+            int result = 0;
             for (Future<ComplexTask> future : listFuture) {
                 try {
-                    future.get().execute();
-                    cyclicBarrier.await();
+                    result = result + future.get().call();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
             }
+            System.out.println(result);
             tasks.clear();
         }
     }
