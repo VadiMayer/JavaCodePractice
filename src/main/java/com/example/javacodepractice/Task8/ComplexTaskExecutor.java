@@ -8,35 +8,36 @@ public class ComplexTaskExecutor {
     private final ExecutorService[] executorService;
     private final List<ComplexTask> storage;
     private final int numberOfTasks;
-    private final CyclicBarrier cyclicBarrier;
+    private CyclicBarrier cyclicBarrier;
 
     public ComplexTaskExecutor(int numberOfTasks) {
         this.executorService = new ExecutorService[numberOfTasks];
         this.numberOfTasks = numberOfTasks;
-        this.cyclicBarrier = new CyclicBarrier(numberOfTasks);
         storage = new ArrayList<>();
+    }
+
+    public synchronized void executeTasks(int runSeveralTimes) throws BrokenBarrierException, InterruptedException {
+
+        List<Callable<Integer>> tasks = new ArrayList<>();
+        cyclicBarrier = new CyclicBarrier(runSeveralTimes);
+
         for (int i = 0; i < numberOfTasks; i++) {
             storage.add(new ComplexTask(List.of(1, 1, 1, 1, 1), cyclicBarrier));
         }
-    }
-
-    public void executeTasks(int runSeveralTimes) throws BrokenBarrierException, InterruptedException {
-
-        List<Callable<ComplexTask>> tasks = new ArrayList<>();
 
         for (int i = 0; i < numberOfTasks; i++) {
             //размножаем задачу на runSeveralTimes записываем в tasks
             for (int j = 0; j < runSeveralTimes; j++) {
-                int forLambda = i;
-                tasks.add(() -> storage.get(forLambda));
+                Callable<Integer> taskForExecution = storage.get(i);
+                tasks.add(taskForExecution);
             }
             //создаем для каждого комплекта задач executorService
             executorService[i] = Executors.newFixedThreadPool(runSeveralTimes);
-            List<Future<ComplexTask>> listFuture = executorService[i].invokeAll(tasks);
+            List<Future<Integer>> listFuture = executorService[i].invokeAll(tasks);
             int result = 0;
-            for (Future<ComplexTask> future : listFuture) {
+            for (Future<Integer> future : listFuture) {
                 try {
-                    result = result + future.get().call();
+                    result = result + future.get();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -45,6 +46,8 @@ public class ComplexTaskExecutor {
             }
             System.out.println(result);
             tasks.clear();
+            Thread.sleep(500);
+            executorService[i].shutdown();
         }
     }
 }

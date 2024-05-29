@@ -11,7 +11,7 @@ public class ComplexTask implements Callable<Integer> {
 
     public ComplexTask(List<Integer> data, CyclicBarrier cyclicBarrier) {
         this.data = data;
-        this.cyclicBarrier = cyclicBarrier;
+        this.cyclicBarrier = new CyclicBarrier(cyclicBarrier.getParties());
     }
 
     public int execute() {
