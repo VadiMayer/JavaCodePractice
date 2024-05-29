@@ -4,14 +4,14 @@ import java.util.concurrent.BrokenBarrierException;
 
 public class Main {
     public static void main(String[] args) {
-        ComplexTaskExecutor complexTaskExecutor = new ComplexTaskExecutor(1);
+        ComplexTaskExecutor complexTaskExecutor = new ComplexTaskExecutor(10);
 
         Runnable testRunnable = () -> {
             System.out.println(Thread.currentThread().getName() + " started the test.");
 
             // Выполнение задач
             try {
-                complexTaskExecutor.executeTasks(1);
+                complexTaskExecutor.executeTasks(30);
             } catch (BrokenBarrierException | InterruptedException e) {
                 throw new RuntimeException(e);
             }

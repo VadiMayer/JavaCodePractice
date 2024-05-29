@@ -46,7 +46,6 @@ public class ComplexTaskExecutor {
             }
             System.out.println(result);
             tasks.clear();
-            Thread.sleep(500);
             executorService[i].shutdown();
         }
     }
