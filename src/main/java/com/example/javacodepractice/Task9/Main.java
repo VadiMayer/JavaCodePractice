@@ -14,6 +14,19 @@ public class Main {
                 new Order("Smartphone", 900.0)
         );
 
-        Map<String, Integer> groupByCost = orders.stream().collect(Collectors.groupingBy(Order::getProduct))
+        Map<String, Double> groupByTotalCostByProduct = orders.stream()
+                .collect(Collectors.groupingBy(
+                Order::getProduct, Collectors.summingDouble(Order::getCost)));
+
+        List<Map.Entry<String, Double>> sortedProducts = groupByTotalCostByProduct.entrySet().stream()
+                .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
+                .toList();
+
+        List<Map.Entry<String, Double>> top3Products = sortedProducts.stream()
+                .limit(3)
+                .toList();
+
+        top3Products.forEach(e -> System.out.println("Product: " + e.getKey() + ", Total Cost: " + e.getValue()));
+
     }
 }
