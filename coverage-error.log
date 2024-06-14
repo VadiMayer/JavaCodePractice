@@ -1,0 +1,350 @@
+[2024.06.14 15:28:20] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverageargs'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:29:47] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage1args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:32:05] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage2args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:50:51] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage4args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:54:52] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage9args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:55:02] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage10args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 15:55:13] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage8args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:06:30] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage5args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:06:58] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage3args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:09:14] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage857args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:44:45] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage7args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:47:52] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage770args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:48:07] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage1589args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+[2024.06.14 16:48:15] (Coverage ERROR): Failed to parse agent arguments
+java.lang.IllegalArgumentException: At least 5 arguments expected but 1 found.
+'C:\Users\Âàäèì\AppData\Local\Temp\coverage6args'
+Expected arguments are:
+0) data file to save coverage result
+1) a flag to enable tracking per test coverage
+2) a flag to calculate coverage for unloaded classes
+3) a flag to use data file as initial coverage, also use it if several parallel processes are to write into one file
+4) a flag to run line coverage or branch coverage otherwise
+
+	at com.intellij.rt.coverage.instrumentation.CoverageArgs.fromString(CoverageArgs.java:60)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.performPremain(Instrumentator.java:58)
+	at com.intellij.rt.coverage.instrumentation.Instrumentator.premain(Instrumentator.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:35)
+	at com.intellij.rt.coverage.main.CoveragePremain.premain(CoveragePremain.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
